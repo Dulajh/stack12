@@ -1,0 +1,85 @@
+package Stacki;
+
+public class Stack {
+
+	int top;
+	int maxsize;
+	char[] Stact_arry;
+	
+	
+	public Stack( int maxsize) {
+		this.maxsize = maxsize;
+		Stact_arry = new char[maxsize];
+		top = -1;
+		
+	}
+	
+	public boolean isEmpty() {
+		return (top == -1);
+	}
+	
+	public boolean isFull() {
+		return (top == (maxsize -1));
+	}
+	
+	public void push(char ch) {
+		if(isFull()) {
+			Stact_arry[++top]= ch;
+		}
+		else {
+			System.out.println("Stack is full");
+		}
+	}
+	 
+	public char pop() {
+		if(isEmpty()) {
+			return Stact_arry[top--];
+		}
+		else {
+			System.out.println("Stact is Empty");
+		}
+		return 0;
+	}
+	public char peek() {
+		if(!isEmpty()) {
+			return Stact_arry[top];
+		}
+		else {
+			System.out.println("istack is Empty");
+		}
+		return 0;
+	}
+	
+	public void display() {
+		System.out.println("Print stsck elements");
+		
+		int i = top;
+		
+		do {
+			System.out.println(Stact_arry[i]+ " ");
+			i--;
+		}while(i>=0);
+	}
+}
+
+
+package Stacki;
+
+public class Mymain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		 Stack  stk = new Stack(5);
+		 
+		 stk.push('D');
+		 stk.push('U');
+		 stk.push('L');
+		 stk.push('A');
+		 stk.push('j');
+		 
+		
+		 stk.display();
+//		 stk.pop();
+	}
+
+}
